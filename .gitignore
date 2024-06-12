@@ -2,3 +2,5 @@ dist/
 node_modules/
 cypress/plugins
 cypress/videos
+# Local Netlify folder
+.netlify

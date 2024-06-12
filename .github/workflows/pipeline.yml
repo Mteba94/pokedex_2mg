@@ -30,7 +30,10 @@ jobs:
           start: npm run start-test
           wait-on: http://localhost:5000
       - name: Deploy on Netlify
-        uses: jsmrcaga/action-netlify-deploy@v2.0.0
+        uses: South-Paw/action-netlify-deploy@v1.2.0
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_KEY }}
-          NETLIFY_DEPLOY_TO_PROD: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          netlify-auth-token: ${{ secrets.NETLIFY_API_KEY }}
+          netlify-site-id: ${{ secrets.SITE_NAME }}
+          build-dir: './build'
+          comment-on-commit: true
